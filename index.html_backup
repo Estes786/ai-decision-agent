@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Web Developer</title>
+    <meta name="description" content="Portfolio website seorang web developer yang menampilkan proyek-proyek dan keahlian dalam pengembangan web modern.">
+    <meta name="keywords" content="web developer, portfolio, HTML, CSS, JavaScript, Tailwind CSS">
+    <meta name="author" content="Portfolio Owner">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Portfolio - Web Developer">
+    <meta property="og:description" content="Portfolio website seorang web developer yang menampilkan proyek-proyek dan keahlian dalam pengembangan web modern.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico">
+    
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./dist/output.css">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-white dark:bg-secondary-900 text-secondary-900 dark:text-white transition-colors duration-300">
+    
+    <!-- Header/Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-secondary-900/80 backdrop-blur-md border-b border-secondary-200 dark:border-secondary-700">
+        <nav class="container-custom section-padding py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-r from-primary-600 to-accent-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">P</span>
+                    </div>
+                    <span class="font-heading font-bold text-xl text-secondary-900 dark:text-white">Portfolio</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-secondary-700 dark:text-secondary-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200">Beranda</a>
+                    <a href="#about" class="nav-link text-secondary-700 dark:text-secondary-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200">Tentang</a>
+                    <a href="#projects" class="nav-link text-secondary-700 dark:text-secondary-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200">Proyek</a>
+                    <a href="#skills" class="nav-link text-secondary-700 dark:text-secondary-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200">Keahlian</a>
+                    <a href="#contact" class="nav-link text-secondary-700 dark:text-secondary-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200">Kontak</a>
+                    
+                    <!-- Dark Mode Toggle -->
+                    <button id="theme-toggle" class="p-2 rounded-lg bg-secondary-100 dark:bg-secondary-800 text-secondary-700 dark:text-secondary-300 hover:bg-secondary-200 dark:hover:bg-secondary-700 transition-colors duration-200">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center space-x-4">
+                    <!-- Dark Mode Toggle Mobile -->
+                    <button id="theme-toggle-mobile" class="p-2 rounded-lg bg-secondary-100 dark:bg-secondary-800 text-secondary-700 dark:text-secondary-300">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+                    
+                    <!-- Hamburger Menu -->
+                    <button id="mobile-menu-button" class="p-2 rounded-lg bg-secondary-100 dark:bg-secondary-800 text-secondary-700 dark:text-secondary-300">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 py-4 border-t border-secondary-200 dark:border-secondary-700">
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="mobile-nav-link text-secondary-700 dark:text-secondary-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200">Beranda</a>
+                    <a href="#about" class="mobile-nav-link text-secondary-700 dark:text-secondary-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200">Tentang</a>
+                    <a href="#projects" class="mobile-nav-link text-secondary-700 dark:text-secondary-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200">Proyek</a>
+                    <a href="#skills" class="mobile-nav-link text-secondary-700 dark:text-secondary-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200">Keahlian</a>
+                    <a href="#contact" class="mobile-nav-link text-secondary-700 dark:text-secondary-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200">Kontak</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-50 to-accent-50 dark:from-secondary-900 dark:to-secondary-800 pt-20">
+        <div class="container-custom section-padding text-center">
+            <div class="max-w-4xl mx-auto">
+                <!-- Profile Image -->
+                <div class="mb-8 animate-fade-in">
+                    <div class="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full bg-gradient-to-r from-primary-600 to-accent-600 p-1">
+                        <div class="w-full h-full rounded-full bg-secondary-200 dark:bg-secondary-700 flex items-center justify-center">
+                            <i class="fas fa-user text-4xl md:text-5xl text-secondary-600 dark:text-secondary-400"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hero Text -->
+                <div class="animate-slide-up">
+                    <h1 class="font-heading font-bold text-4xl md:text-6xl lg:text-7xl mb-6">
+                        Halo, Saya <span class="text-gradient">Web Developer</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-secondary-600 dark:text-secondary-400 mb-8 max-w-2xl mx-auto leading-relaxed">
+                        Saya menciptakan pengalaman web yang menarik dan fungsional menggunakan teknologi modern. 
+                        Spesialisasi dalam pengembangan frontend yang responsif dan user-friendly.
+                    </p>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        <a href="#projects" class="btn-primary inline-flex items-center space-x-2 px-8 py-3 text-lg">
+                            <span>Lihat Proyek</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="btn-secondary inline-flex items-center space-x-2 px-8 py-3 text-lg">
+                            <span>Hubungi Saya</span>
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Scroll Indicator -->
+                <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-slow">
+                    <i class="fas fa-chevron-down text-2xl text-secondary-400"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding bg-white dark:bg-secondary-900">
+        <div class="container-custom">
+            <div class="max-w-4xl mx-auto">
+                <!-- Section Header -->
+                <div class="text-center mb-16">
+                    <h2 class="font-heading font-bold text-3xl md:text-4xl lg:text-5xl mb-4">
+                        Tentang <span class="text-gradient">Saya</span>
+                    </h2>
+                    <p class="text-lg text-secondary-600 dark:text-secondary-400 max-w-2xl mx-auto">
+                        Mengenal lebih dekat tentang perjalanan dan passion saya dalam dunia pengembangan web
+                    </p>
+                </div>
+                
+                <!-- About Content -->
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- About Text -->
+                    <div class="space-y-6">
+                        <h3 class="font-heading font-semibold text-2xl md:text-3xl text-secondary-900 dark:text-white">
+                            Passionate Web Developer
+                        </h3>
+                        <p class="text-secondary-600 dark:text-secondary-400 leading-relaxed">
+                            Saya adalah seorang web developer yang bersemangat dengan pengalaman dalam menciptakan 
+                            website dan aplikasi web yang modern, responsif, dan user-friendly. Saya selalu berusaha 
+                            untuk mengikuti perkembangan teknologi terbaru dan menerapkan best practices dalam setiap proyek.
+                        </p>
+                        <p class="text-secondary-600 dark:text-secondary-400 leading-relaxed">
+                            Dengan latar belakang yang kuat dalam HTML, CSS, JavaScript, dan berbagai framework modern, 
+                            saya mampu mengubah ide kreatif menjadi solusi digital yang efektif dan menarik.
+                        </p>
+                        
+                        <!-- Stats -->
+                        <div class="grid grid-cols-2 gap-6 pt-6">
+                            <div class="text-center">
+                                <div class="font-heading font-bold text-3xl text-primary-600 dark:text-primary-400">50+</div>
+                                <div class="text-secondary-600 dark:text-secondary-400">Proyek Selesai</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="font-heading font-bold text-3xl text-primary-600 dark:text-primary-400">3+</div>
+                                <div class="text-secondary-600 dark:text-secondary-400">Tahun Pengalaman</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- About Image/Illustration -->
+                    <div class="relative">
+                        <div class="bg-gradient-to-br from-primary-100 to-accent-100 dark:from-primary-900/20 dark:to-accent-900/20 rounded-2xl p-8 h-80 flex items-center justify-center">
+                            <div class="text-center">
+                                <i class="fas fa-code text-6xl text-primary-600 dark:text-primary-400 mb-4"></i>
+                                <p class="text-secondary-600 dark:text-secondary-400 font-medium">
+                                    "Code is poetry in motion"
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating Elements -->
+                        <div class="absolute -top-4 -right-4 w-16 h-16 bg-accent-500 rounded-full flex items-center justify-center animate-bounce-slow">
+                            <i class="fas fa-heart text-white text-xl"></i>
+                        </div>
+                        <div class="absolute -bottom-4 -left-4 w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center animate-bounce-slow" style="animation-delay: 0.5s;">
+                            <i class="fas fa-star text-white"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding bg-secondary-50 dark:bg-secondary-800">
+        <div class="container-custom">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="font-heading font-bold text-3xl md:text-4xl lg:text-5xl mb-4">
+                    Proyek <span class="text-gradient">Terbaru</span>
+                </h2>
+                <p class="text-lg text-secondary-600 dark:text-secondary-400 max-w-2xl mx-auto">
+                    Beberapa proyek yang telah saya kerjakan dengan berbagai teknologi dan pendekatan
+                </p>
+            </div>
+            
+            <!-- Projects Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="card group hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                    <div class="relative overflow-hidden rounded-lg mb-6">
+                        <div class="bg-gradient-to-br from-blue-400 to-purple-600 h-48 flex items-center justify-center">
+                            <i class="fas fa-shopping-cart text-4xl text-white"></i>
+                        </div>
+                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-white text-secondary-900 p-3 rounded-full hover:bg-secondary-100 transition-colors">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="bg-white text-secondary-900 p-3 rounded-full hover:bg-secondary-100 transition-colors">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="font-heading font-semibold text-xl mb-3 text-secondary-900 dark:text-white">E-Commerce Platform</h3>
+                    <p class="text-secondary-600 dark:text-secondary-400 mb-4">
+                        Platform e-commerce modern dengan fitur lengkap, payment gateway, dan admin dashboard.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm">React</span>
+                        <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm">Node.js</span>
+                        <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm">MongoDB</span>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="card group hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                    <div class="relative overflow-hidden rounded-lg mb-6">
+                        <div class="bg-gradient-to-br from-green-400 to-blue-600 h-48 flex items-center justify-center">
+                            <i class="fas fa-chart-line text-4xl text-white"></i>
+                        </div>
+                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-white text-secondary-900 p-3 rounded-full hover:bg-secondary-100 transition-colors">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="bg-white text-secondary-900 p-3 rounded-full hover:bg-secondary-100 transition-colors">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="font-heading font-semibold text-xl mb-3 text-secondary-900 dark:text-white">Analytics Dashboard</h3>
+                    <p class="text-secondary-600 dark:text-secondary-400 mb-4">
+                        Dashboard analitik real-time dengan visualisasi data yang interaktif dan responsif.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm">Vue.js</span>
+                        <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm">D3.js</span>
+                        <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm">Express</span>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="card group hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                    <div class="relative overflow-hidden rounded-lg mb-6">
+                        <div class="bg-gradient-to-br from-purple-400 to-pink-600 h-48 flex items-center justify-center">
+                            <i class="fas fa-mobile-alt text-4xl text-white"></i>
+                        </div>
+                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-white text-secondary-900 p-3 rounded-full hover:bg-secondary-100 transition-colors">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="bg-white text-secondary-900 p-3 rounded-full hover:bg-secondary-100 transition-colors">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="font-heading font-semibold text-xl mb-3 text-secondary-900 dark:text-white">Mobile App Landing</h3>
+                    <p class="text-secondary-600 dark:text-secondary-400 mb-4">
+                        Landing page untuk aplikasi mobile dengan animasi menarik dan konversi tinggi.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm">HTML5</span>
+                        <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm">Tailwind</span>
+                        <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm">GSAP</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- View More Button -->
+            <div class="text-center mt-12">
+                <a href="#" class="btn-primary inline-flex items-center space-x-2 px-8 py-3">
+                    <span>Lihat Semua Proyek</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section-padding bg-white dark:bg-secondary-900">
+        <div class="container-custom">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="font-heading font-bold text-3xl md:text-4xl lg:text-5xl mb-4">
+                    Keahlian <span class="text-gradient">Teknis</span>
+                </h2>
+                <p class="text-lg text-secondary-600 dark:text-secondary-400 max-w-2xl mx-auto">
+                    Teknologi dan tools yang saya kuasai untuk menciptakan solusi web yang berkualitas
+                </p>
+            </div>
+            
+            <!-- Skills Categories -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Frontend Skills -->
+                <div class="card">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-palette text-2xl text-white"></i>
+                        </div>
+                        <h3 class="font-heading font-semibold text-xl text-secondary-900 dark:text-white">Frontend</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-secondary-700 dark:text-secondary-300">HTML5 & CSS3</span>
+                                <span class="text-primary-600 dark:text-primary-400 font-medium">95%</span>
+                            </div>
+                            <div class="w-full bg-secondary-200 dark:bg-secondary-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-primary-500 to-primary-600 h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-secondary-700 dark:text-secondary-300">JavaScript</span>
+                                <span class="text-primary-600 dark:text-primary-400 font-medium">90%</span>
+                            </div>
+                            <div class="w-full bg-secondary-200 dark:bg-secondary-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-primary-500 to-primary-600 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-secondary-700 dark:text-secondary-300">React.js</span>
+                                <span class="text-primary-600 dark:text-primary-400 font-medium">85%</span>
+                            </div>
+                            <div class="w-full bg-secondary-200 dark:bg-secondary-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-primary-500 to-primary-600 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-secondary-700 dark:text-secondary-300">Tailwind CSS</span>
+                                <span class="text-primary-600 dark:text-primary-400 font-medium">92%</span>
+                            </div>
+                            <div class="w-full bg-secondary-200 dark:bg-secondary-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-primary-500 to-primary-600 h-2 rounded-full" style="width: 92%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Backend Skills -->
+                <div class="card">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-server text-2xl text-white"></i>
+                        </div>
+                        <h3 class="font-heading font-semibold text-xl text-secondary-900 dark:text-white">Backend</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-secondary-700 dark:text-secondary-300">Node.js</span>
+                                <span class="text-primary-600 dark:text-primary-400 font-medium">80%</span>
+                            </div>
+                            <div class="w-full bg-secondary-200 dark:bg-secondary-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-green-500 to-green-600 h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-secondary-700 dark:text-secondary-300">Express.js</span>
+                                <span class="text-primary-600 dark:text-primary-400 font-medium">85%</span>
+                            </div>
+                            <div class="w-full bg-secondary-200 dark:bg-secondary-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-green-500 to-green-600 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-secondary-700 dark:text-secondary-300">MongoDB</span>
+                                <span class="text-primary-600 dark:text-primary-400 font-medium">75%</span>
+                            </div>
+                            <div class="w-full bg-secondary-200 dark:bg-secondary-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-green-500 to-green-600 h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-secondary-700 dark:text-secondary-300">REST API</span>
+                                <span class="text-primary-600 dark:text-primary-400 font-medium">88%</span>
+                            </div>
+                            <div class="w-full bg-secondary-200 dark:bg-secondary-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-green-500 to-green-600 h-2 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tools & Others -->
+                <div class="card">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-tools text-2xl text-white"></i>
+                        </div>
+                        <h3 class="font-heading font-semibold text-xl text-secondary-900 dark:text-white">Tools & Others</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-secondary-700 dark:text-secondary-300">Git & GitHub</span>
+                                <span class="text-primary-600 dark:text-primary-400 font-medium">90%</span>
+                            </div>
+                            <div class="w-full bg-secondary-200 dark:bg-secondary-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-purple-500 to-purple-600 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-secondary-700 dark:text-secondary-300">Figma</span>
+                                <span class="text-primary-600 dark:text-primary-400 font-medium">85%</span>
+                            </div>
+                            <div class="w-full bg-secondary-200 dark:bg-secondary-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-purple-500 to-purple-600 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-secondary-700 dark:text-secondary-300">Responsive Design</span>
+                                <span class="text-primary-600 dark:text-primary-400 font-medium">95%</span>
+                            </div>
+                            <div class="w-full bg-secondary-200 dark:bg-secondary-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-purple-500 to-purple-600 h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-secondary-700 dark:text-secondary-300">SEO Optimization</span>
+                                <span class="text-primary-600 dark:text-primary-400 font-medium">80%</span>
+                            </div>
+                            <div class="w-full bg-secondary-200 dark:bg-secondary-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-purple-500 to-purple-600 h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-secondary-50 dark:bg-secondary-800">
+        <div class="container-custom">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="font-heading font-bold text-3xl md:text-4xl lg:text-5xl mb-4">
+                    Mari <span class="text-gradient">Berkolaborasi</span>
+                </h2>
+                <p class="text-lg text-secondary-600 dark:text-secondary-400 max-w-2xl mx-auto">
+                    Punya proyek menarik? Mari diskusikan bagaimana saya bisa membantu mewujudkan ide Anda
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Contact Info -->
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="font-heading font-semibold text-2xl mb-6 text-secondary-900 dark:text-white">
+                                Informasi Kontak
+                            </h3>
+                            <div class="space-y-6">
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-envelope text-primary-600 dark:text-primary-400"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-medium text-secondary-900 dark:text-white">Email</div>
+                                        <div class="text-secondary-600 dark:text-secondary-400">hello@portfolio.com</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-phone text-primary-600 dark:text-primary-400"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-medium text-secondary-900 dark:text-white">Telepon</div>
+                                        <div class="text-secondary-600 dark:text-secondary-400">+62 123 456 7890</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-map-marker-alt text-primary-600 dark:text-primary-400"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-medium text-secondary-900 dark:text-white">Lokasi</div>
+                                        <div class="text-secondary-600 dark:text-secondary-400">Jakarta, Indonesia</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Social Media -->
+                        <div>
+                            <h4 class="font-heading font-medium text-lg mb-4 text-secondary-900 dark:text-white">
+                                Ikuti Saya
+                            </h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-12 h-12 bg-primary-600 hover:bg-primary-700 text-white rounded-lg flex items-center justify-center transition-colors duration-200">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="w-12 h-12 bg-primary-600 hover:bg-primary-700 text-white rounded-lg flex items-center justify-center transition-colors duration-200">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="#" class="w-12 h-12 bg-primary-600 hover:bg-primary-700 text-white rounded-lg flex items-center justify-center transition-colors duration-200">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="w-12 h-12 bg-primary-600 hover:bg-primary-700 text-white rounded-lg flex items-center justify-center transition-colors duration-200">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Form -->
+                    <div class="card">
+                        <form id="contact-form" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-secondary-700 dark:text-secondary-300 mb-2">
+                                    Nama Lengkap
+                                </label>
+                                <input type="text" id="name" name="name" required
+                                    class="w-full px-4 py-3 border border-secondary-300 dark:border-secondary-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-secondary-700 text-secondary-900 dark:text-white transition-colors duration-200"
+                                    placeholder="Masukkan nama lengkap Anda">
+                                <div class="error-message hidden text-red-500 text-sm mt-1"></div>
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-secondary-700 dark:text-secondary-300 mb-2">
+                                    Email
+                                </label>
+                                <input type="email" id="email" name="email" required
+                                    class="w-full px-4 py-3 border border-secondary-300 dark:border-secondary-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-secondary-700 text-secondary-900 dark:text-white transition-colors duration-200"
+                                    placeholder="nama@email.com">
+                                <div class="error-message hidden text-red-500 text-sm mt-1"></div>
+                            </div>
+                            
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-secondary-700 dark:text-secondary-300 mb-2">
+                                    Subjek
+                                </label>
+                                <input type="text" id="subject" name="subject" required
+                                    class="w-full px-4 py-3 border border-secondary-300 dark:border-secondary-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-secondary-700 text-secondary-900 dark:text-white transition-colors duration-200"
+                                    placeholder="Subjek pesan Anda">
+                                <div class="error-message hidden text-red-500 text-sm mt-1"></div>
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-secondary-700 dark:text-secondary-300 mb-2">
+                                    Pesan
+                                </label>
+                                <textarea id="message" name="message" rows="5" required
+                                    class="w-full px-4 py-3 border border-secondary-300 dark:border-secondary-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-secondary-700 text-secondary-900 dark:text-white transition-colors duration-200 resize-vertical"
+                                    placeholder="Tulis pesan Anda di sini..."></textarea>
+                                <div class="error-message hidden text-red-500 text-sm mt-1"></div>
+                            </div>
+                            
+                            <button type="submit" class="w-full btn-primary py-3 text-lg">
+                                <span class="submit-text">Kirim Pesan</span>
+                                <span class="loading-text hidden">Mengirim...</span>
+                                <i class="fas fa-paper-plane ml-2"></i>
+                            </button>
+                            
+                            <div id="form-message" class="hidden p-4 rounded-lg text-center"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary-900 dark:bg-secondary-950 text-white section-padding">
+        <div class="container-custom">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- Footer Brand -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-r from-primary-600 to-accent-600 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-lg">P</span>
+                        </div>
+                        <span class="font-heading font-bold text-xl">Portfolio</span>
+                    </div>
+                    <p class="text-secondary-400 leading-relaxed">
+                        Menciptakan pengalaman web yang luar biasa dengan teknologi modern dan desain yang menarik.
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-heading font-semibold text-lg mb-4">Quick Links</h4>
+                    <div class="space-y-2">
+                        <a href="#home" class="block text-secondary-400 hover:text-white transition-colors duration-200">Beranda</a>
+                        <a href="#about" class="block text-secondary-400 hover:text-white transition-colors duration-200">Tentang</a>
+                        <a href="#projects" class="block text-secondary-400 hover:text-white transition-colors duration-200">Proyek</a>
+                        <a href="#skills" class="block text-secondary-400 hover:text-white transition-colors duration-200">Keahlian</a>
+                        <a href="#contact" class="block text-secondary-400 hover:text-white transition-colors duration-200">Kontak</a>
+                    </div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-heading font-semibold text-lg mb-4">Kontak</h4>
+                    <div class="space-y-2 text-secondary-400">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-envelope w-4"></i>
+                            <span>hello@portfolio.com</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-phone w-4"></i>
+                            <span>+62 123 456 7890</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-map-marker-alt w-4"></i>
+                            <span>Jakarta, Indonesia</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="border-t border-secondary-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="text-secondary-400 text-sm mb-4 md:mb-0">
+                    © 2024 Portfolio. All rights reserved.
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-secondary-400 hover:text-white transition-colors duration-200">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-secondary-400 hover:text-white transition-colors duration-200">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="#" class="text-secondary-400 hover:text-white transition-colors duration-200">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-secondary-400 hover:text-white transition-colors duration-200">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-primary-600 hover:bg-primary-700 text-white rounded-full shadow-lg opacity-0 invisible transition-all duration-300 z-40">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="./src/js/main.js"></script>
+</body>
+</html>
+

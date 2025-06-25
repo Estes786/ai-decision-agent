@@ -1,0 +1,23 @@
+{
+    "name": "my-portfolio",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
+        "build:watch": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+        "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+        "serve": "python3 -m http.server 8000",
+        "start": "npm run build && npm run serve"
+    },
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "devDependencies": {
+        "autoprefixer": "^10.4.21",
+        "postcss": "^8.5.6",
+        "tailwindcss": "^3.4.17"
+    }
+}
