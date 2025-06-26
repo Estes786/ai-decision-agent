@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+<<<<<<< HEAD
     content: [
           "./index.html",
           "./src/**/*.{html,js}",
@@ -68,5 +69,15 @@ module.exports = {
         },
     plugins: [],
     darkMode: 'class',
+=======
+  content: ["./*.html", // Pindai file HTML di root proyek
+    "./src/**/*.{js,ts,jsx,tsx}", // Pindai file JS/TS/JSX/TSX di folder src
+    // Anda bisa menambahkan jalur lain di sini jika Anda memiliki file di folder lain
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+>>>>>>> c583b79d4047928ca063a1ea9756f66f0c75ee2e
 }
 
