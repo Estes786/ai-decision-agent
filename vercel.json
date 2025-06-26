@@ -6,14 +6,8 @@
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "."
+        "distDir": "dist"
       }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
     }
   ],
   "buildCommand": "npm run build",
@@ -23,8 +17,8 @@
   "public": true,
   "rewrites": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "source": "/blog/(.*)",
+      "destination": "/blog/index.html"
     }
   ],
   "headers": [
@@ -56,4 +50,3 @@
     }
   ]
 }
-
