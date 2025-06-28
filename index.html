@@ -143,11 +143,10 @@
                 <!-- Hero Text -->
                 <div class="animate-slide-up">
                     <h1 class="font-heading font-bold text-4xl md:text-6xl lg:text-7xl mb-6">
-                        Halo, Saya <span class="text-gradient">Web Developer</span>
+                        Halo, Saya <span class="text-gradient-alt" id="gradient-text">Arsitek Pengalaman Digital</span>
                     </h1>
                     <p class="text-lg md:text-xl text-secondary-600 dark:text-secondary-400 mb-8 max-w-2xl mx-auto leading-relaxed">
-                        Saya menciptakan pengalaman web yang menarik dan fungsional menggunakan teknologi modern. 
-                        Spesialisasi dalam pengembangan frontend yang responsif dan user-friendly.
+                        Saya menciptakan pengalaman web yang menarik dan fungsional, mengubah ide kompleks menjadi antarmuka yang intuitif, responsif, dan berkinerja tinggi untuk masa depan digital Anda.
                     </p>
                     
                     <!-- CTA Buttons -->
@@ -208,6 +207,7 @@
                             kolaborasi yang kuat dengan klien, dan komitmen untuk terus belajar dan berkembang mengikuti 
                             evolusi teknologi web.
                             saya mampu mengubah ide kreatif menjadi solusi digital yang efektif dan menarik.
+
                         </p>
                         
                         <!-- Stats -->
@@ -770,6 +770,20 @@
         Ini adalah paragraf dengan beberapa kelas Tailwind.
     </p>
 
+                
+                // Alternative: Use innerHTML to ensure proper rendering
+                if (gradientText.textContent === 'Arsitek Pengalaman Digital') {
+                    // Text is already correct, no need to change
+                } else {
+                    // Fallback if text is not rendering properly
+                    gradientText.innerHTML = 'Arsitek Pengalaman Digital';
+                }
+            }
+        });
+        
+        // Theme toggle functionality (existing code would continue here)
+     </script>
+     <script src="./gradient-fix.js"></script>
 </body>
 </html>
 

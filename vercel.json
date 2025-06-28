@@ -1,6 +1,5 @@
 {
-  "version": 2,
-  "name": "my-portfolio",
+  "version": 2onijs
   "builds": [
     {
       "src": "package.json",
