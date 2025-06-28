@@ -1,0 +1,211 @@
+/* gradient-styles.css - Enhanced gradient styles with fallbacks */
+
+/* Primary gradient text style */
+.text-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    position: relative;
+}
+
+/* Enhanced gradient with animation */
+.text-gradient-alt {
+    background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    position: relative;
+    animation: gradient-shift 3s ease-in-out infinite;
+}
+
+/* Gradient animation */
+@keyframes gradient-shift {
+    0%, 100% { 
+        background-position: 0% 50%; 
+    }
+    50% { 
+        background-position: 100% 50%; 
+    }
+}
+
+/* Fallback for browsers that don't support background-clip: text */
+@supports not (-webkit-background-clip: text) {
+    .text-gradient,
+    .text-gradient-alt {
+        color: #3b82f6;
+        background: none;
+        -webkit-text-fill-color: unset;
+    }
+}
+
+/* Fallback for older browsers */
+.no-webkitbackgroundclip .text-gradient,
+.no-webkitbackgroundclip .text-gradient-alt {
+    color: #3b82f6;
+    background: none;
+    -webkit-text-fill-color: unset;
+}
+
+/* Alternative gradient styles */
+.text-gradient-blue {
+    background: linear-gradient(45deg, #1e40af, #3b82f6, #60a5fa);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    animation: gradient-shift 4s ease-in-out infinite;
+}
+
+.text-gradient-purple {
+    background: linear-gradient(45deg, #7c3aed, #a855f7, #c084fc);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    animation: gradient-shift 5s ease-in-out infinite;
+}
+
+.text-gradient-rainbow {
+    background: linear-gradient(45deg, #ef4444, #f97316, #eab308, #22c55e, #3b82f6, #8b5cf6, #ec4899);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    animation: rainbow-shift 6s ease-in-out infinite;
+}
+
+@keyframes rainbow-shift {
+    0%, 100% { background-position: 0% 50%; }
+    25% { background-position: 50% 0%; }
+    50% { background-position: 100% 50%; }
+    75% { background-position: 50% 100%; }
+}
+
+/* Hover effects for gradient text */
+.text-gradient:hover,
+.text-gradient-alt:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+    .text-gradient {
+        background: linear-gradient(135deg, #818cf8 0%, #a78bfa 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    .text-gradient-alt {
+        background: linear-gradient(45deg, #60a5fa, #a78bfa, #f472b6);
+        background-size: 200% 200%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: gradient-shift 3s ease-in-out infinite;
+    }
+}
+
+/* Explicit dark mode class */
+.dark .text-gradient {
+    background: linear-gradient(135deg, #818cf8 0%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.dark .text-gradient-alt {
+    background: linear-gradient(45deg, #60a5fa, #a78bfa, #f472b6);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 3s ease-in-out infinite;
+}
+
+/* Print styles */
+@media print {
+    .text-gradient,
+    .text-gradient-alt,
+    .text-gradient-blue,
+    .text-gradient-purple,
+    .text-gradient-rainbow {
+        color: #000 !important;
+        background: none !important;
+        -webkit-text-fill-color: unset !important;
+        animation: none !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .text-gradient,
+    .text-gradient-alt {
+        color: #000;
+        background: none;
+        -webkit-text-fill-color: unset;
+        animation: none;
+    }
+    
+    .dark .text-gradient,
+    .dark .text-gradient-alt {
+        color: #fff;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .text-gradient-alt,
+    .text-gradient-blue,
+    .text-gradient-purple,
+    .text-gradient-rainbow {
+        animation: none;
+    }
+    
+    .text-gradient:hover,
+    .text-gradient-alt:hover {
+        transform: none;
+    }
+}
+
+/* Force hardware acceleration for better performance */
+.text-gradient,
+.text-gradient-alt {
+    will-change: background-position;
+    transform: translateZ(0);
+}
+
+/* Utility classes for different gradient intensities */
+.text-gradient-subtle {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    opacity: 0.8;
+}
+
+.text-gradient-bold {
+    background: linear-gradient(135deg, #1e40af 0%, #7c3aed 50%, #be185d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    font-weight: 700;
+}
+

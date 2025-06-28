@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "name": "my-portfolio",
   "builds": [
     {
       "src": "package.json",
@@ -8,12 +7,6 @@
       "config": {
         "distDir": "."
       }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
     }
   ],
   "buildCommand": "npm run build",

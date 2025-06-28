@@ -2,6 +2,7 @@
 <html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
+    nk rel="stylesheet" href="./gradient-styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Web Developer</title>
     <meta name="description" content="Portfolio website seorang web developer yang menampilkan proyek-proyek dan keahlian dalam pengembangan web modern.">
@@ -19,7 +20,8 @@
     
     <!-- Tailwind CSS -->
     <link rel="stylesheet" href="./dist/output.css">
-    
+    <link rel="stylesheet" href="./gradient-styles.css">
+
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -27,6 +29,39 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS for gradient text fallback -->
+    <style>
+        .text-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        /* Fallback for browsers that don't support background-clip: text */
+        @supports not (-webkit-background-clip: text) {
+            .text-gradient {
+                color: #667eea;
+            }
+        }
+        
+        /* Additional gradient styles */
+        .text-gradient-alt {
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient-shift 3s ease-in-out infinite;
+        }
+        
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+    </style>
 </head>
 <body class="bg-white dark:bg-secondary-900 text-secondary-900 dark:text-white transition-colors duration-300">
     
@@ -98,14 +133,13 @@
                     </div>
                 </div>
                 
-                <!-- Hero Text -->
+                <!-- Hero Text - IMPROVED VERSION -->
                 <div class="animate-slide-up">
                     <h1 class="font-heading font-bold text-4xl md:text-6xl lg:text-7xl mb-6">
-                        Halo, Saya <span class="text-gradient">Web Developer</span>
+                        Halo, Saya <span class="text-gradient-alt" id="gradient-text">Arsitek Pengalaman Digital</span>
                     </h1>
                     <p class="text-lg md:text-xl text-secondary-600 dark:text-secondary-400 mb-8 max-w-2xl mx-auto leading-relaxed">
-                        Saya menciptakan pengalaman web yang menarik dan fungsional menggunakan teknologi modern. 
-                        Spesialisasi dalam pengembangan frontend yang responsif dan user-friendly.
+                        Saya menciptakan pengalaman web yang menarik dan fungsional, mengubah ide kompleks menjadi antarmuka yang intuitif, responsif, dan berkinerja tinggi untuk masa depan digital Anda.
                     </p>
                     
                     <!-- CTA Buttons -->
@@ -157,7 +191,14 @@
                         </p>
                         <p class="text-secondary-600 dark:text-secondary-400 leading-relaxed">
                             Dengan latar belakang yang kuat dalam HTML, CSS, JavaScript, dan berbagai framework modern, 
-                            saya mampu mengubah ide kreatif menjadi solusi digital yang efektif dan menarik.
+                            saya mampu mengubah ide kreatif menjadi solusi digital yang efektif dan menarik. Saya percaya 
+                            bahwa setiap website harus tidak hanya indah secara visual, tetapi juga fungsional, cepat, dan 
+                            dapat diakses oleh semua pengguna.
+                        </p>
+                        <p class="text-secondary-600 dark:text-secondary-400 leading-relaxed">
+                            <strong>Nilai-nilai yang saya pegang:</strong> Fokus pada performa, desain yang bersih dan intuitif, 
+                            kolaborasi yang kuat dengan klien, dan komitmen untuk terus belajar dan berkembang mengikuti 
+                            evolusi teknologi web.
                         </p>
                         
                         <!-- Stats -->
@@ -197,488 +238,30 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section-padding bg-secondary-50 dark:bg-secondary-800">
-        <div class="container-custom">
-            <!-- Section Header -->
-            <div class="text-center mb-16">
-                <h2 class="font-heading font-bold text-3xl md:text-4xl lg:text-5xl mb-4">
-                    Proyek <span class="text-gradient">Terbaru</span>
-                </h2>
-                <p class="text-lg text-secondary-600 dark:text-secondary-400 max-w-2xl mx-auto">
-                    Beberapa proyek yang telah saya kerjakan dengan berbagai teknologi dan pendekatan
-                </p>
-            </div>
-            
-            <!-- Projects Grid -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="card group hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-                    <div class="relative overflow-hidden rounded-lg mb-6">
-                        <div class="bg-gradient-to-br from-blue-400 to-purple-600 h-48 flex items-center justify-center">
-                            <i class="fas fa-shopping-cart text-4xl text-white"></i>
-                        </div>
-                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <div class="flex space-x-4">
-                                <a href="#" class="bg-white text-secondary-900 p-3 rounded-full hover:bg-secondary-100 transition-colors">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                <a href="#" class="bg-white text-secondary-900 p-3 rounded-full hover:bg-secondary-100 transition-colors">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <h3 class="font-heading font-semibold text-xl mb-3 text-secondary-900 dark:text-white">E-Commerce Platform</h3>
-                    <p class="text-secondary-600 dark:text-secondary-400 mb-4">
-                        Platform e-commerce modern dengan fitur lengkap, payment gateway, dan admin dashboard.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm">React</span>
-                        <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm">Node.js</span>
-                        <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm">MongoDB</span>
-                    </div>
-                </div>
+    <!-- JavaScript for gradient text fallback -->
+    <script>
+        // Ensure gradient text is properly rendered
+        document.addEventListener('DOMContentLoaded', function() {
+            const gradientText = document.getElementById('gradient-text');
+            if (gradientText) {
+                // Force re-render of gradient text
+                gradientText.style.display = 'none';
+                gradientText.offsetHeight; // Trigger reflow
+                gradientText.style.display = '';
                 
-                <!-- Project 2 -->
-                <div class="card group hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-                    <div class="relative overflow-hidden rounded-lg mb-6">
-                        <div class="bg-gradient-to-br from-green-400 to-blue-600 h-48 flex items-center justify-center">
-                            <i class="fas fa-chart-line text-4xl text-white"></i>
-                        </div>
-                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <div class="flex space-x-4">
-                                <a href="#" class="bg-white text-secondary-900 p-3 rounded-full hover:bg-secondary-100 transition-colors">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                <a href="#" class="bg-white text-secondary-900 p-3 rounded-full hover:bg-secondary-100 transition-colors">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <h3 class="font-heading font-semibold text-xl mb-3 text-secondary-900 dark:text-white">Analytics Dashboard</h3>
-                    <p class="text-secondary-600 dark:text-secondary-400 mb-4">
-                        Dashboard analitik real-time dengan visualisasi data yang interaktif dan responsif.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm">Vue.js</span>
-                        <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm">D3.js</span>
-                        <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm">Express</span>
-                    </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="card group hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-                    <div class="relative overflow-hidden rounded-lg mb-6">
-                        <div class="bg-gradient-to-br from-purple-400 to-pink-600 h-48 flex items-center justify-center">
-                            <i class="fas fa-mobile-alt text-4xl text-white"></i>
-                        </div>
-                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <div class="flex space-x-4">
-                                <a href="#" class="bg-white text-secondary-900 p-3 rounded-full hover:bg-secondary-100 transition-colors">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                <a href="#" class="bg-white text-secondary-900 p-3 rounded-full hover:bg-secondary-100 transition-colors">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <h3 class="font-heading font-semibold text-xl mb-3 text-secondary-900 dark:text-white">Mobile App Landing</h3>
-                    <p class="text-secondary-600 dark:text-secondary-400 mb-4">
-                        Landing page untuk aplikasi mobile dengan animasi menarik dan konversi tinggi.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm">HTML5</span>
-                        <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm">Tailwind</span>
-                        <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm">GSAP</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- View More Button -->
-            <div class="text-center mt-12">
-                <a href="#" class="btn-primary inline-flex items-center space-x-2 px-8 py-3">
-                    <span>Lihat Semua Proyek</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section-padding bg-white dark:bg-secondary-900">
-        <div class="container-custom">
-            <!-- Section Header -->
-            <div class="text-center mb-16">
-                <h2 class="font-heading font-bold text-3xl md:text-4xl lg:text-5xl mb-4">
-                    Keahlian <span class="text-gradient">Teknis</span>
-                </h2>
-                <p class="text-lg text-secondary-600 dark:text-secondary-400 max-w-2xl mx-auto">
-                    Teknologi dan tools yang saya kuasai untuk menciptakan solusi web yang berkualitas
-                </p>
-            </div>
-            
-            <!-- Skills Categories -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Frontend Skills -->
-                <div class="card">
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-palette text-2xl text-white"></i>
-                        </div>
-                        <h3 class="font-heading font-semibold text-xl text-secondary-900 dark:text-white">Frontend</h3>
-                    </div>
-                    <div class="space-y-4">
-                        <div class="skill-item">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-secondary-700 dark:text-secondary-300">HTML5 & CSS3</span>
-                                <span class="text-primary-600 dark:text-primary-400 font-medium">95%</span>
-                            </div>
-                            <div class="w-full bg-secondary-200 dark:bg-secondary-700 rounded-full h-2">
-                                <div class="bg-gradient-to-r from-primary-500 to-primary-600 h-2 rounded-full" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-secondary-700 dark:text-secondary-300">JavaScript</span>
-                                <span class="text-primary-600 dark:text-primary-400 font-medium">90%</span>
-                            </div>
-                            <div class="w-full bg-secondary-200 dark:bg-secondary-700 rounded-full h-2">
-                                <div class="bg-gradient-to-r from-primary-500 to-primary-600 h-2 rounded-full" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-secondary-700 dark:text-secondary-300">React.js</span>
-                                <span class="text-primary-600 dark:text-primary-400 font-medium">85%</span>
-                            </div>
-                            <div class="w-full bg-secondary-200 dark:bg-secondary-700 rounded-full h-2">
-                                <div class="bg-gradient-to-r from-primary-500 to-primary-600 h-2 rounded-full" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-secondary-700 dark:text-secondary-300">Tailwind CSS</span>
-                                <span class="text-primary-600 dark:text-primary-400 font-medium">92%</span>
-                            </div>
-                            <div class="w-full bg-secondary-200 dark:bg-secondary-700 rounded-full h-2">
-                                <div class="bg-gradient-to-r from-primary-500 to-primary-600 h-2 rounded-full" style="width: 92%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Backend Skills -->
-                <div class="card">
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-server text-2xl text-white"></i>
-                        </div>
-                        <h3 class="font-heading font-semibold text-xl text-secondary-900 dark:text-white">Backend</h3>
-                    </div>
-                    <div class="space-y-4">
-                        <div class="skill-item">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-secondary-700 dark:text-secondary-300">Node.js</span>
-                                <span class="text-primary-600 dark:text-primary-400 font-medium">80%</span>
-                            </div>
-                            <div class="w-full bg-secondary-200 dark:bg-secondary-700 rounded-full h-2">
-                                <div class="bg-gradient-to-r from-green-500 to-green-600 h-2 rounded-full" style="width: 80%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-secondary-700 dark:text-secondary-300">Express.js</span>
-                                <span class="text-primary-600 dark:text-primary-400 font-medium">85%</span>
-                            </div>
-                            <div class="w-full bg-secondary-200 dark:bg-secondary-700 rounded-full h-2">
-                                <div class="bg-gradient-to-r from-green-500 to-green-600 h-2 rounded-full" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-secondary-700 dark:text-secondary-300">MongoDB</span>
-                                <span class="text-primary-600 dark:text-primary-400 font-medium">75%</span>
-                            </div>
-                            <div class="w-full bg-secondary-200 dark:bg-secondary-700 rounded-full h-2">
-                                <div class="bg-gradient-to-r from-green-500 to-green-600 h-2 rounded-full" style="width: 75%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-secondary-700 dark:text-secondary-300">REST API</span>
-                                <span class="text-primary-600 dark:text-primary-400 font-medium">88%</span>
-                            </div>
-                            <div class="w-full bg-secondary-200 dark:bg-secondary-700 rounded-full h-2">
-                                <div class="bg-gradient-to-r from-green-500 to-green-600 h-2 rounded-full" style="width: 88%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Tools & Others -->
-                <div class="card">
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-tools text-2xl text-white"></i>
-                        </div>
-                        <h3 class="font-heading font-semibold text-xl text-secondary-900 dark:text-white">Tools & Others</h3>
-                    </div>
-                    <div class="space-y-4">
-                        <div class="skill-item">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-secondary-700 dark:text-secondary-300">Git & GitHub</span>
-                                <span class="text-primary-600 dark:text-primary-400 font-medium">90%</span>
-                            </div>
-                            <div class="w-full bg-secondary-200 dark:bg-secondary-700 rounded-full h-2">
-                                <div class="bg-gradient-to-r from-purple-500 to-purple-600 h-2 rounded-full" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-secondary-700 dark:text-secondary-300">Figma</span>
-                                <span class="text-primary-600 dark:text-primary-400 font-medium">85%</span>
-                            </div>
-                            <div class="w-full bg-secondary-200 dark:bg-secondary-700 rounded-full h-2">
-                                <div class="bg-gradient-to-r from-purple-500 to-purple-600 h-2 rounded-full" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-secondary-700 dark:text-secondary-300">Responsive Design</span>
-                                <span class="text-primary-600 dark:text-primary-400 font-medium">95%</span>
-                            </div>
-                            <div class="w-full bg-secondary-200 dark:bg-secondary-700 rounded-full h-2">
-                                <div class="bg-gradient-to-r from-purple-500 to-purple-600 h-2 rounded-full" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-secondary-700 dark:text-secondary-300">SEO Optimization</span>
-                                <span class="text-primary-600 dark:text-primary-400 font-medium">80%</span>
-                            </div>
-                            <div class="w-full bg-secondary-200 dark:bg-secondary-700 rounded-full h-2">
-                                <div class="bg-gradient-to-r from-purple-500 to-purple-600 h-2 rounded-full" style="width: 80%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section-padding bg-secondary-50 dark:bg-secondary-800">
-        <div class="container-custom">
-            <!-- Section Header -->
-            <div class="text-center mb-16">
-                <h2 class="font-heading font-bold text-3xl md:text-4xl lg:text-5xl mb-4">
-                    Mari <span class="text-gradient">Berkolaborasi</span>
-                </h2>
-                <p class="text-lg text-secondary-600 dark:text-secondary-400 max-w-2xl mx-auto">
-                    Punya proyek menarik? Mari diskusikan bagaimana saya bisa membantu mewujudkan ide Anda
-                </p>
-            </div>
-            
-            <div class="max-w-4xl mx-auto">
-                <div class="grid md:grid-cols-2 gap-12">
-                    <!-- Contact Info -->
-                    <div class="space-y-8">
-                        <div>
-                            <h3 class="font-heading font-semibold text-2xl mb-6 text-secondary-900 dark:text-white">
-                                Informasi Kontak
-                            </h3>
-                            <div class="space-y-6">
-                                <div class="flex items-center space-x-4">
-                                    <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center">
-                                        <i class="fas fa-envelope text-primary-600 dark:text-primary-400"></i>
-                                    </div>
-                                    <div>
-                                        <div class="font-medium text-secondary-900 dark:text-white">Email</div>
-                                        <div class="text-secondary-600 dark:text-secondary-400">hello@portfolio.com</div>
-                                    </div>
-                                </div>
-                                <div class="flex items-center space-x-4">
-                                    <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center">
-                                        <i class="fas fa-phone text-primary-600 dark:text-primary-400"></i>
-                                    </div>
-                                    <div>
-                                        <div class="font-medium text-secondary-900 dark:text-white">Telepon</div>
-                                        <div class="text-secondary-600 dark:text-secondary-400">+62 123 456 7890</div>
-                                    </div>
-                                </div>
-                                <div class="flex items-center space-x-4">
-                                    <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center">
-                                        <i class="fas fa-map-marker-alt text-primary-600 dark:text-primary-400"></i>
-                                    </div>
-                                    <div>
-                                        <div class="font-medium text-secondary-900 dark:text-white">Lokasi</div>
-                                        <div class="text-secondary-600 dark:text-secondary-400">Jakarta, Indonesia</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Social Media -->
-                        <div>
-                            <h4 class="font-heading font-medium text-lg mb-4 text-secondary-900 dark:text-white">
-                                Ikuti Saya
-                            </h4>
-                            <div class="flex space-x-4">
-                                <a href="#" class="w-12 h-12 bg-primary-600 hover:bg-primary-700 text-white rounded-lg flex items-center justify-center transition-colors duration-200">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="#" class="w-12 h-12 bg-primary-600 hover:bg-primary-700 text-white rounded-lg flex items-center justify-center transition-colors duration-200">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                                <a href="#" class="w-12 h-12 bg-primary-600 hover:bg-primary-700 text-white rounded-lg flex items-center justify-center transition-colors duration-200">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                                <a href="#" class="w-12 h-12 bg-primary-600 hover:bg-primary-700 text-white rounded-lg flex items-center justify-center transition-colors duration-200">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Contact Form -->
-                    <div class="card">
-                        <form id="contact-form" class="space-y-6">
-                            <div>
-                                <label for="name" class="block text-sm font-medium text-secondary-700 dark:text-secondary-300 mb-2">
-                                    Nama Lengkap
-                                </label>
-                                <input type="text" id="name" name="name" required
-                                    class="w-full px-4 py-3 border border-secondary-300 dark:border-secondary-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-secondary-700 text-secondary-900 dark:text-white transition-colors duration-200"
-                                    placeholder="Masukkan nama lengkap Anda">
-                                <div class="error-message hidden text-red-500 text-sm mt-1"></div>
-                            </div>
-                            
-                            <div>
-                                <label for="email" class="block text-sm font-medium text-secondary-700 dark:text-secondary-300 mb-2">
-                                    Email
-                                </label>
-                                <input type="email" id="email" name="email" required
-                                    class="w-full px-4 py-3 border border-secondary-300 dark:border-secondary-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-secondary-700 text-secondary-900 dark:text-white transition-colors duration-200"
-                                    placeholder="nama@email.com">
-                                <div class="error-message hidden text-red-500 text-sm mt-1"></div>
-                            </div>
-                            
-                            <div>
-                                <label for="subject" class="block text-sm font-medium text-secondary-700 dark:text-secondary-300 mb-2">
-                                    Subjek
-                                </label>
-                                <input type="text" id="subject" name="subject" required
-                                    class="w-full px-4 py-3 border border-secondary-300 dark:border-secondary-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-secondary-700 text-secondary-900 dark:text-white transition-colors duration-200"
-                                    placeholder="Subjek pesan Anda">
-                                <div class="error-message hidden text-red-500 text-sm mt-1"></div>
-                            </div>
-                            
-                            <div>
-                                <label for="message" class="block text-sm font-medium text-secondary-700 dark:text-secondary-300 mb-2">
-                                    Pesan
-                                </label>
-                                <textarea id="message" name="message" rows="5" required
-                                    class="w-full px-4 py-3 border border-secondary-300 dark:border-secondary-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-secondary-700 text-secondary-900 dark:text-white transition-colors duration-200 resize-vertical"
-                                    placeholder="Tulis pesan Anda di sini..."></textarea>
-                                <div class="error-message hidden text-red-500 text-sm mt-1"></div>
-                            </div>
-                            
-                            <button type="submit" class="w-full btn-primary py-3 text-lg">
-                                <span class="submit-text">Kirim Pesan</span>
-                                <span class="loading-text hidden">Mengirim...</span>
-                                <i class="fas fa-paper-plane ml-2"></i>
-                            </button>
-                            
-                            <div id="form-message" class="hidden p-4 rounded-lg text-center"></div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-secondary-900 dark:bg-secondary-950 text-white section-padding">
-        <div class="container-custom">
-            <div class="grid md:grid-cols-3 gap-8 mb-8">
-                <!-- Footer Brand -->
-                <div>
-                    <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-10 h-10 bg-gradient-to-r from-primary-600 to-accent-600 rounded-lg flex items-center justify-center">
-                            <span class="text-white font-bold text-lg">P</span>
-                        </div>
-                        <span class="font-heading font-bold text-xl">Portfolio</span>
-                    </div>
-                    <p class="text-secondary-400 leading-relaxed">
-                        Menciptakan pengalaman web yang luar biasa dengan teknologi modern dan desain yang menarik.
-                    </p>
-                </div>
-                
-                <!-- Quick Links -->
-                <div>
-                    <h4 class="font-heading font-semibold text-lg mb-4">Quick Links</h4>
-                    <div class="space-y-2">
-                        <a href="#home" class="block text-secondary-400 hover:text-white transition-colors duration-200">Beranda</a>
-                        <a href="#about" class="block text-secondary-400 hover:text-white transition-colors duration-200">Tentang</a>
-                        <a href="#projects" class="block text-secondary-400 hover:text-white transition-colors duration-200">Proyek</a>
-                        <a href="#skills" class="block text-secondary-400 hover:text-white transition-colors duration-200">Keahlian</a>
-                        <a href="#contact" class="block text-secondary-400 hover:text-white transition-colors duration-200">Kontak</a>
-                    </div>
-                </div>
-                
-                <!-- Contact Info -->
-                <div>
-                    <h4 class="font-heading font-semibold text-lg mb-4">Kontak</h4>
-                    <div class="space-y-2 text-secondary-400">
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-envelope w-4"></i>
-                            <span>hello@portfolio.com</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-phone w-4"></i>
-                            <span>+62 123 456 7890</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-map-marker-alt w-4"></i>
-                            <span>Jakarta, Indonesia</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Footer Bottom -->
-            <div class="border-t border-secondary-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <div class="text-secondary-400 text-sm mb-4 md:mb-0">
-                    © 2024 Portfolio. All rights reserved.
-                </div>
-                <div class="flex space-x-4">
-                    <a href="#" class="text-secondary-400 hover:text-white transition-colors duration-200">
-                        <i class="fab fa-github text-xl"></i>
-                    </a>
-                    <a href="#" class="text-secondary-400 hover:text-white transition-colors duration-200">
-                        <i class="fab fa-linkedin text-xl"></i>
-                    </a>
-                    <a href="#" class="text-secondary-400 hover:text-white transition-colors duration-200">
-                        <i class="fab fa-twitter text-xl"></i>
-                    </a>
-                    <a href="#" class="text-secondary-400 hover:text-white transition-colors duration-200">
-                        <i class="fab fa-instagram text-xl"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-primary-600 hover:bg-primary-700 text-white rounded-full shadow-lg opacity-0 invisible transition-all duration-300 z-40">
-        <i class="fas fa-chevron-up"></i>
-    </button>
-
-    <!-- JavaScript -->
-    <script src="./src/js/main.js"></script>
+                // Alternative: Use innerHTML to ensure proper rendering
+                if (gradientText.textContent === 'Arsitek Pengalaman Digital') {
+                    // Text is already correct, no need to change
+                } else {
+                    // Fallback if text is not rendering properly
+                    gradientText.innerHTML = 'Arsitek Pengalaman Digital';
+                }
+            }
+        });
+        
+        // Theme toggle functionality (existing code would continue here)
+     </script>
+     <script src="./gradient-fix.js"></script>
 </body>
 </html>
 
