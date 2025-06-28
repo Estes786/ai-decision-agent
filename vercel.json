@@ -10,6 +10,18 @@
       }
     }
   ],
+
+        "distDir": "."
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ],
+
   "buildCommand": "npm run build",
   "outputDirectory": ".",
   "installCommand": "npm install",
@@ -17,8 +29,13 @@
   "public": true,
   "rewrites": [
     {
+
       "source": "/blog/(.*)",
       "destination": "/blog/index.html"
+
+      "source": "/(.*)",
+      "destination": "/index.html"
+
     }
   ],
   "headers": [
@@ -50,3 +67,4 @@
     }
   ]
 }
+
