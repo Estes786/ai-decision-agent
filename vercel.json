@@ -1,5 +1,5 @@
 {
-  "version": 2onijs
+  "version": 2,
   "builds": [
     {
       "src": "package.json",
@@ -9,36 +9,20 @@
       }
     }
   ],
-
-        "distDir": "."
-      }
-    }
-  ],
-
+  "outputDirectory": "dist",
+  "buildCommand": "npm run build",
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ],
-
-  "buildCommand": "npm run build",
-  "outputDirectory": ".",
-  "installCommand": "npm install",
-  "framework": null,
-  "public": true,
-  "rewrites": [
+      "dest": "/index.html"
+    },
     {
-
-      "source": "/(.*)",
-      "destination": "/index.html"
-
       "source": "/blog/(.*)",
       "destination": "/blog/index.html"
-
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
-
     }
   ],
   "headers": [
@@ -67,6 +51,12 @@
           "value": "public, max-age=31536000, immutable"
         }
       ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
