@@ -2,7 +2,6 @@
 <html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    nk rel="stylesheet" href="./gradient-styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Web Developer</title>
     <meta name="description" content="Portfolio website seorang web developer yang menampilkan proyek-proyek dan keahlian dalam pengembangan web modern.">
@@ -20,8 +19,7 @@
     
     <!-- Tailwind CSS -->
     <link rel="stylesheet" href="./dist/output.css">
-    <link rel="stylesheet" href="./gradient-styles.css">
-
+    
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -29,39 +27,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Custom CSS for gradient text fallback -->
-    <style>
-        .text-gradient {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        /* Fallback for browsers that don't support background-clip: text */
-        @supports not (-webkit-background-clip: text) {
-            .text-gradient {
-                color: #667eea;
-            }
-        }
-        
-        /* Additional gradient styles */
-        .text-gradient-alt {
-            background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradient-shift 3s ease-in-out infinite;
-        }
-        
-        @keyframes gradient-shift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-    </style>
 </head>
 <body class="bg-white dark:bg-secondary-900 text-secondary-900 dark:text-white transition-colors duration-300">
     
@@ -133,13 +98,6 @@
                     </div>
                 </div>
                 
-                <!-- Hero Text - IMPROVED VERSION -->
-                <div class="animate-slide-up">
-                    <h1 class="font-heading font-bold text-4xl md:text-6xl lg:text-7xl mb-6">
-                        Halo, Saya <span class="text-gradient-alt" id="gradient-text">Arsitek Pengalaman Digital</span>
-                    </h1>
-                    <p class="text-lg md:text-xl text-secondary-600 dark:text-secondary-400 mb-8 max-w-2xl mx-auto leading-relaxed">
-                        Saya menciptakan pengalaman web yang menarik dan fungsional, mengubah ide kompleks menjadi antarmuka yang intuitif, responsif, dan berkinerja tinggi untuk masa depan digital Anda.
                 <!-- Hero Text -->
                 <div class="animate-slide-up">
                     <h1 class="font-heading font-bold text-4xl md:text-6xl lg:text-7xl mb-6">
@@ -199,14 +157,6 @@
                         </p>
                         <p class="text-secondary-600 dark:text-secondary-400 leading-relaxed">
                             Dengan latar belakang yang kuat dalam HTML, CSS, JavaScript, dan berbagai framework modern, 
-                            saya mampu mengubah ide kreatif menjadi solusi digital yang efektif dan menarik. Saya percaya 
-                            bahwa setiap website harus tidak hanya indah secara visual, tetapi juga fungsional, cepat, dan 
-                            dapat diakses oleh semua pengguna.
-                        </p>
-                        <p class="text-secondary-600 dark:text-secondary-400 leading-relaxed">
-                            <strong>Nilai-nilai yang saya pegang:</strong> Fokus pada performa, desain yang bersih dan intuitif, 
-                            kolaborasi yang kuat dengan klien, dan komitmen untuk terus belajar dan berkembang mengikuti 
-                            evolusi teknologi web.
                             saya mampu mengubah ide kreatif menjadi solusi digital yang efektif dan menarik.
                         </p>
                         
@@ -247,30 +197,6 @@
         </div>
     </section>
 
-    <!-- JavaScript for gradient text fallback -->
-    <script>
-        // Ensure gradient text is properly rendered
-        document.addEventListener('DOMContentLoaded', function() {
-            const gradientText = document.getElementById('gradient-text');
-            if (gradientText) {
-                // Force re-render of gradient text
-                gradientText.style.display = 'none';
-                gradientText.offsetHeight; // Trigger reflow
-                gradientText.style.display = '';
-                
-                // Alternative: Use innerHTML to ensure proper rendering
-                if (gradientText.textContent === 'Arsitek Pengalaman Digital') {
-                    // Text is already correct, no need to change
-                } else {
-                    // Fallback if text is not rendering properly
-                    gradientText.innerHTML = 'Arsitek Pengalaman Digital';
-                }
-            }
-        });
-        
-        // Theme toggle functionality (existing code would continue here)
-     </script>
-     <script src="./gradient-fix.js"></script>
     <!-- Projects Section -->
     <section id="projects" class="section-padding bg-secondary-50 dark:bg-secondary-800">
         <div class="container-custom">
@@ -753,23 +679,6 @@
 
     <!-- JavaScript -->
     <script src="./src/js/main.js"></script>
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tailwind CSS Test</title>
-    <!-- Link ke file CSS yang dihasilkan Tailwind -->
-    <link href="./dist/output.css" rel="stylesheet">
-</head>
-<body>
-    <h1 class="text-3xl font-bold text-blue-600 p-4">
-        Hello, Tailwind CSS!
-    </h1>
-    <p class="text-lg text-gray-800 mt-2">
-        Ini adalah paragraf dengan beberapa kelas Tailwind.
-    </p>
-
 </body>
 </html>
 

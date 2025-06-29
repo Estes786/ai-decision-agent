@@ -1,6 +1,8 @@
 {
   "name": "my-portfolio",
   "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "description": "Portfolio website responsif menggunakan Tailwind CSS",
   "main": "index.html",
   "scripts": {
@@ -8,6 +10,14 @@
     "build:watch": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
     "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
     "serve": "python3 -m http.server 8000",
+    "start": "npm run build && npm run serve",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "vercel-build": "mkdir -p dist && tailwindcss -i ./src/input.css -o ./dist/output.css --minify && cp index.html dist/index.html && cp index.js dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
     "start": "npm run build && npm run serve"
   },
   "keywords": [
@@ -22,5 +32,10 @@
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.17"
+
+  },
+  "dependencies": {
+    "strip-bom": "^5.0.0"
+
   }
 }

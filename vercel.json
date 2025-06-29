@@ -1,14 +1,28 @@
 {
   "version": 2,
+  "name": "my-portfolio",
   "builds": [
     {
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+
         "distDir": "."
       }
     }
   ],
+
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ],
+
   "buildCommand": "npm run build",
   "outputDirectory": ".",
   "installCommand": "npm install",
@@ -16,8 +30,16 @@
   "public": true,
   "rewrites": [
     {
+
       "source": "/(.*)",
       "destination": "/index.html"
+
+      "source": "/blog/(.*)",
+      "destination": "/blog/index.html"
+
+      "source": "/(.*)",
+      "destination": "/index.html"
+
     }
   ],
   "headers": [
