@@ -13,10 +13,6 @@
   "buildCommand": "npm run build",
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    },
-    {
       "src": "/blog/(.*)",
       "dest": "/blog/index.html"
     },
