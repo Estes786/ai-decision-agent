@@ -76,7 +76,6 @@ module.exports = {
     extend: {},
   },
   plugins: [],
->>>>>>> resolved-conflicts
   content: [
     "./index.html",
     "./src/**/*.{html,js}",
